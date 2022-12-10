@@ -4,7 +4,7 @@
 
 # Group Project #3: Betting on the Blockchain
 
-[![under construction](https://github.com/DigitalGoldRush/Group-Project-3-Betting-on-the-blockchain/blob/main/media/gambling%20image.jpeg)](https://github.com/DigitalGoldRush/Group-Project-3-Betting-on-the-blockchain/blob/main/media/gambling%20image.jpeg)
+[![under construction](https://github.com/DigitalGoldRush/CoupBond/blob/main/media/welder%20construction.jpeg)](https://github.com/DigitalGoldRush/CoupBond/blob/main/media/welder%20construction.jpeg)
 
 
 ## Building smart contracts that run games of chance
