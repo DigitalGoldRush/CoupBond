@@ -5,17 +5,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 import streamlit as st
 
-
-load_dotenv()
-
-# Define and connect a new Web3 provider
-w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
-  
-
-################################################################################
-# Contract Helper function:
-################################################################################
-
 @st.cache(allow_output_mutation=True)
 def load_contract():
     with open(Path('./contracts/compiled/artwork_abi.json')) as f:
@@ -29,8 +18,8 @@ def load_contract():
     )
 
     return contract
-
-
+    
+w3 = Web3    
 st.title("Register New Artwork")
 accounts = w3.eth.accounts
 address = st.selectbox("Select Artwork Owner", options=accounts)

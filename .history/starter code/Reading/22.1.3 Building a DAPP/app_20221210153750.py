@@ -1,20 +1,15 @@
 import os
 import json
 from web3 import Web3
+from web3 import web3
+from web3.middleware import geth_poa_middleware
+from web3.gas_strategies.time_based import medium_gas_price_strategy
+from web3.middleware import construct_sign_and_send_raw_middleware
+from eth_account import Account
+
 from pathlib import Path
 from dotenv import load_dotenv
 import streamlit as st
-
-
-load_dotenv()
-
-# Define and connect a new Web3 provider
-w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
-  
-
-################################################################################
-# Contract Helper function:
-################################################################################
 
 @st.cache(allow_output_mutation=True)
 def load_contract():
@@ -29,8 +24,7 @@ def load_contract():
     )
 
     return contract
-
-
+    
 st.title("Register New Artwork")
 accounts = w3.eth.accounts
 address = st.selectbox("Select Artwork Owner", options=accounts)
